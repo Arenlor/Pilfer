@@ -1,0 +1,29 @@
+<!ENTITY pilfer.contextLabel "Pilfer">
+<!ENTITY pilfer.contextAccesskey "f">
+
+<!ENTITY pilfer.quicknodeAccesskey "q">
+
+<!ENTITY pilfer.pmLabel "+/-">
+<!ENTITY pilfer.plusLabel "+">
+<!ENTITY pilfer.minusLabel "-">
+
+<!ENTITY pilfer.manualLabel "Manual">
+<!ENTITY pilfer.manualAccesskey "M">
+
+<!ENTITY pilfer.customLabel "Custom">
+<!ENTITY pilfer.customAccesskey "C">
+
+<!ENTITY pilfer.directoryLabel "Directory">
+<!ENTITY pilfer.directoryAccesskey "D">
+
+<!ENTITY pilfer.optionsLabel "Options">
+<!ENTITY pilfer.optionsAccesskey "O">
+
+<!ENTITY pilfer.rangeLabel "Range">
+<!ENTITY pilfer.rangeAccesskey "R">
+
+<!ENTITY pilfer.leadingLabel "x00">
+<!ENTITY pilfer.leadingAccesskey "x">
+
+<!ENTITY pilfer.parseLabel "?123">
+<!ENTITY pilfer.parseAccesskey "z">

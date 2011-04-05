@@ -1,0 +1,15 @@
+<!ENTITY prefwindow.title "pilfer preferences">
+
+<!ENTITY paneCustom.title "Custom Types" >
+<!ENTITY paneCustom.model "Model:" >
+<!ENTITY paneCustom.format "Format:" >
+<!ENTITY paneCustom.add "Add new item" >
+<!ENTITY paneCustom.remove "Remove selected" >
+<!ENTITY paneCustom.sortModel "Sort by Model" >
+<!ENTITY paneCustom.sortFormat "Sort by Format" >
+
+<!ENTITY paneRange.title "Ranges Values">
+<!ENTITY paneRange.add "Add new value">
+<!ENTITY paneRange.remove "Remove Selected">
+<!ENTITY paneRange.value "Range Value:">
+<!ENTITY paneRange.quicknode "Quicknode Range:">

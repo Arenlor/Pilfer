@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://pilfer/locale/options.dtd">
+
+<prefwindow id="pilferPreferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
+<script src="pilferOptions.js"></script>
+
+<prefpane id="paneRange" label="&paneRange.title;" align="center" image="chrome://pilfer/skin/range_48.png">
+	<preferences>
+		<preference id="quicknodePref" name="extensions.pilfer.quicknode" type="int"/>
+	</preferences>
+	<label control="quicknodeValue" value="&paneRange.quicknode;" />
+		<textbox id="quicknodeValue" preference="quicknodePref" />		
+	<listbox id="rangeListbox" seltype="single"  height="170" width="200" />
+	<label control="rangeValue" value="&paneRange.value;" />
+  <textbox id="rangeValue"/>
+  <button id="rangeAdd" 		label="&paneRange.add;"			oncommand="pilferOptions.onRangeAdd(event);"		/>
+  <button id="rangeRemove" 	label="&paneRange.remove;"	oncommand="pilferOptions.onRangeRemove(event);"/>
+</prefpane>
+
+<prefpane id="paneCustom" label="&paneCustom.title;" align="center" image="chrome://pilfer/skin/custom_48.png">
+	<richlistbox id="customListbox" seltype="single" height="150" width="200" />
+	<hbox>
+		<button id="customSort" label="&paneCustom.sortModel;"	oncommand="pilferOptions.onCustomSortModel(event);"/>
+    <button id="customSort" label="&paneCustom.sortFormat;"	oncommand="pilferOptions.onCustomSortFormat(event);"/>
+	</hbox>
+	<label control="formatValue" value="&paneCustom.format;" />
+		<textbox id="formatValue"/>
+	<label control="modelValue" 	value="&paneCustom.model;" />
+		<textbox id="modelValue"/>
+	<button id="customAdd" 		label="&paneCustom.add;" oncommand="pilferOptions.onCustomAdd(event);"/>
+  <button id="customRemove" label="&paneCustom.remove;"	oncommand="pilferOptions.onCustomRemove(event);"/>
+</prefpane>
+	
+</prefwindow>

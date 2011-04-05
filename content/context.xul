@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://pilfer/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://pilfer/locale/context.dtd">
+
+<overlay id="pilfer-overlay-root" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="pilferID.js"></script>
+	<script src="pilferUtilities.js"></script>
+	<script src="pilferContext.js"></script>
+
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="pilfer-overlay-strings" src="chrome://pilfer/locale/pilfer.properties"/>
+	</stringbundleset>
+	
+	<popup id="contentAreaContextMenu">
+		<menu id="pilfer-context-root" label="&pilfer.contextLabel;" accesskey="&pilfer.contextAccesskey;" insertafter="context-stop">				
+		<menupopup id="pilfer-context-root-popup">
+				<menuitem id="pilfer-context-quicknode" accesskey="&pilfer.quicknodeAccesskey;"/>		
+			
+			<menuseparator />			
+
+			<menu id="pilfer-context-range" label="&pilfer.rangeLabel;" accesskey="&pilfer.rangeAccesskey;">
+				<menupopup id="pilfer-context-range-pop">
+
+					<menu id="pilfer-context-plus" label="&pilfer.plusLabel;"	>
+						<menupopup id="pilfer-context-plus-pop" />
+					</menu>
+
+					<menu id="pilfer-context-minus" label="&pilfer.minusLabel;"	>
+						<menupopup id="pilfer-context-minus-pop" />
+					</menu>
+
+					<menu id="pilfer-context-plusminus" label="&pilfer.pmLabel;" >
+						<menupopup id="pilfer-context-plusminus-pop" />
+					</menu>
+
+				</menupopup>
+			</menu>
+
+			<menu id="pilfer-context-custom" label="&pilfer.customLabel;" accesskey="&pilfer.customAccesskey;">
+				<menupopup id="pilfer-context-custom-pop" />
+			</menu>
+			
+			<menuitem id="pilfer-context-manual" label="&pilfer.manualLabel;" accesskey="&pilfer.manualAccesskey;" oncommand="pilferContext.onManualCommand(event);"/>
+			<menuitem id="pilfer-context-directory" label="&pilfer.directoryLabel;" accesskey="&pilfer.directoryAccesskey;" oncommand="pilferContext.onDirectoryCommand(event);"/>
+
+			<menu id="pilfer-context-options" label="&pilfer.optionsLabel;" accesskey="&pilfer.optionsAccesskey;">
+				<menupopup id="pilfer-context-options-pop">
+					<menuitem id="pilfer-context-leading" label="&pilfer.leadingLabel;" accesskey="&pilfer.leadingAccesskey;" type="checkbox" oncommand="pilferContext.onLeadingCommand(event);" />
+					<menuitem id="pilfer-context-parse" label="&pilfer.parseLabel;" accesskey="&pilfer.parseAccesskey;" type="checkbox" oncommand="pilferContext.onParseCommand(event);" />
+				</menupopup>
+			</menu>
+
+		</menupopup>
+		</menu>
+	</popup>
+
+</overlay>
