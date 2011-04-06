@@ -102,7 +102,7 @@ var pilferGallery = {
 
     var name = document.getElementById("pilfer-gal-name");
         name.innerHTML = curr.src;
-  }
+  },
   
 };
 

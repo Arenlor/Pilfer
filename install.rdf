@@ -7,7 +7,7 @@
       <Description>
         <em:locale>en-US</em:locale>
 				<em:name>Pilfer</em:name>
-				<em:description>Pilfer is a Firefox extension for searching through sequentially named images</em:description>
+        <em:description>Pilfer is a Firefox extension for searching through sequentially named images</em:description>
 				<em:creator>Nicholas Ortenzio</em:creator>
 				<em:contributor>Jason Duncan</em:contributor>
 				<em:contributor>Cristian Haulica</em:contributor>
@@ -15,15 +15,17 @@
       </Description>
     </em:localized>
 
-    <em:version>1.4.0.9</em:version>
-	<em:type>2</em:type>
-	<em:optionsURL>chrome://pilfer/content/options.xul</em:optionsURL>
+    <em:version>1.26</em:version>
+		<em:type>2</em:type>
+
+		<em:optionsURL>chrome://pilfer/content/options.xul</em:optionsURL>
+		<em:iconURL>chrome://pilfer/skin/logo_32.png</em:iconURL>
 
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->
         <em:minVersion>1.5</em:minVersion>
-        <em:maxVersion>5pre4</em:maxVersion>
+        <em:maxVersion>3.6.*</em:maxVersion>
       </Description>
     </em:targetApplication>
 

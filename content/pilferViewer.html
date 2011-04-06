@@ -1,34 +1,56 @@
-<!doctype html>
-
 <html>
-  
-  <head>
+	<head>
 
-    <title>Pilfer</title>
-	<link rel="icon" type="image/png" href="chrome://pilfer/skin/favicon.png" />
-	<link rel="stylesheet" type="text/css" href="chrome://pilfer/skin/pilferViewer.css" />
-	
-    <script src="jquery.js"></script>
-    <script src="pilferEngine.js"></script>
-    <script src="pilferViewer.js"></script>
+		<title>Pilfer: </title>
 
-  </head>
+		<link rel="icon" type="image/png" href="chrome://pilfer/skin/favicon.png" />
 
-  <body>
+		<link rel="stylesheet" type="text/css" href="chrome://pilfer/skin/pilferViewer.css" />
+		<link rel="stylesheet" type="text/css" href="chrome://pilfer/skin/pilferGallery.css" />
+		<link rel="stylesheet" type="text/css" href="chrome://pilfer/skin/pilferNavigation.css" />
+		<link rel="stylesheet" type="text/css" href="chrome://pilfer/skin/pilferProgressBar.css" />
 
-    <div id="header">
-      <div id="logo"><img src="chrome://pilfer/skin/logo_viewer.png" /></div>
-      <div id="completed"></div>
-      <div id="links">
-        <a id="nav_first"></a>
-        <a id="nav_last"></a>
-      </div>
-    </div>
+		<script src="pilferProgressBar.js"></script>
+		<script src="pilferEngine.js"></script>
+		<script src="pilferViewer.js"></script>
+		<script src="pilferGallery.js"></script>
 
-    <div id="image_content">
-    
-    </div>
+	</head>
+	<body>
 
-  </body>
+		<!-- Pilfer Nav -->
+		<table id="pilfer-navigation">
+			<tr>
+				<td id="first-url"></td>
+				<td id="logo"><img src="chrome://pilfer/skin/logo_viewer.png" /></td>
+				<td id="last-url"></td>
+			</tr>
+			<tr>
+				<td id="progress-container" colspan="3"></td>
+			</tr>
+		</table>
+		<!-- End Pilfer Nav -->
+		
+		<!-- Pilfer thumbnail Container -->
+		<div id="image-content" class="content"></div>
+		<!-- End Pilfer thumbnail Container -->
+				
+		<!-- Pilfer Gallery HTML -->
+		<div id="pilfer-gal-background">
+			<table id="pilfer-gal-frame">
+				<tr><td style="display: inline-block;">
+						<div id="pilfer-gal-prev"></div>
+						<div id="pilfer-gal-next"></div>
+						<div id="pilfer-gal-clos"></div>    
+				</td></tr>
+				<tr><td><img id="pilfer-gal-imag" /></td></tr>
+				<tr><td><div id="pilfer-gal-name"></div></tr></td>
+		 </table>
+	 </div>
+		<!-- End Pilfer Gallery HTML -->
+		
+	</body>
+
+	<script>pilferViewer.onLoad();</script>
 
 </html>

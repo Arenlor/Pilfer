@@ -30,13 +30,13 @@ var pilferUtilities = {
 
 	getParentDirectory : function(target) {
 		// photobucket replace concept/code from firefusk. 
-		var match = /(^.*\/)(?:.+)/.exec(target);
-		return (match) ? match[1] : false;
+    var match = /(^.*\/)(?:.+)/.exec(target);
+    return (match) ? match[1].replace(/(\w+)\.photobucket\.com/,"photobucket.com") : false;
   },		
 
 	openImageDirectory : function(tar) {
 		var dir = pilferUtilities.getParentDirectory(tar);
-		if(dir) gBrowser.addTab(dir.replace(/(\w+)\.photobucket\.com/,"photobucket.com"));
+		if(dir) gBrowser.addTab(dir);
 	},
 
 	openPilferViewer : function(pfa) {

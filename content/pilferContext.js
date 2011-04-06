@@ -104,7 +104,7 @@ var pilferContext = {
 	'target' getter: ( function() { return document.getElementById(pilferID.context).getAttribute("value"); }),
 	'leading' getter: ( function() { return this.pref.getBoolPref(pilferID.leadingPref); }),
 	'parseQuery' getter: ( function() { return this.pref.getBoolPref(pilferID.parsePref); }),
-	'parentDirectory' getter: ( function() { var match = /(^.*\/)(?:.+)/.exec(this.target); return (match) ? match[1] : false; }), 
+  'parentDirectory' getter: ( function() { var match = /(^.*\/)(?:.+)/.exec(this.target); return (match) ? match[1] : false; }), 
 	'quicknode' getter: ( function() { return this.pref.getIntPref(pilferID.quickPref); }),
 	
 	/*
@@ -136,9 +136,9 @@ var pilferContext = {
 	 */		
 		
 	firstRun : function() {
-		if(this.pref.getBoolPref('extensions.pilfer.installed')) return;
-		pilferUtilities.createPilferBookmark();
-		this.pref.setBoolPref('extensions.pilfer.installed', true);		 
+			if(this.pref.getBoolPref('extensions.pilfer.installed')) return;
+			pilferUtilities.createPilferBookmark();
+			this.pref.setBoolPref('extensions.pilfer.installed', true);		 
 	},
 	 
 	initializeContextMenu : function() {
@@ -204,16 +204,16 @@ var pilferContext = {
 		proot.setAttribute("value", tar);
 		proot.hidden = false;
     
-		if (this.pref.getBoolPref(pilferID.custAltPref)) {
-		  pilferContext.populateCustomMenu();
-		  this.pref.setBoolPref(pilferID.custAltPref, false)
-		}
-		
-		if (this.pref.getBoolPref(pilferID.rangeAltPref)) {
-		  pilferContext.populateRangeMenus();
-		  this.pref.setBoolPref(pilferID.rangeAltPref, false)
-		}
-	}
+    if (this.pref.getBoolPref(pilferID.custAltPref)) {
+      pilferContext.populateCustomMenu();
+      this.pref.setBoolPref(pilferID.custAltPref, false)
+    }
+    
+    if (this.pref.getBoolPref(pilferID.rangeAltPref)) {
+      pilferContext.populateRangeMenus();
+      this.pref.setBoolPref(pilferID.rangeAltPref, false)
+    }
+	},
 	
 };
 

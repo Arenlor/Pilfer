@@ -9,83 +9,67 @@
 	(at your option) any later version.
 */
 
-$(function() {
+var pilferViewer = {
 
-  // Get PFA from document location
-  var pfa = document.location.href.match(/pfa=(.*)$/);
-      pfa = (pfa) ? decodeURIComponent(pfa[1]) : null;
- 
-  if (!pfa) return;
+	onLoad : function() {
+		var pfa = pilferViewer.getPFAfromAddress();
+			if (!pfa) return;
+		pilferViewer.setPageTitle(pfa);
 
-  // Set Document Title
-	document.title = 'pilfer: ' + pfa;
-
-  // Detoken Pilfer Formatted Address into array of urls
-  var urls = pilferEngine.detoken([pfa]);
-
-  if (!urls) return;
-
-  // DOM nodes
-  var $navfirst = $("#nav_first");
-  var $navlast = $("#nav_last");
-  var $content = $("#image_content");
-  var $completed = $("#completed");
-
-  // Some useful variables
-  var completed = 0;
-  var length = urls.length;
-  var first = urls[0]; 
-  var last = urls[length-1];
-  
-	// Create the pages navigation bar from Pilfer Array
-  $navfirst.attr('href', first).html(first);
-  $navlast.attr('href', last).html(last);
-
-  // increment percentage
-  var increment = function(){
-    completed++;
-    var percent = ~~(completed/length*100)
-    $completed.html(percent + "%");
-  };
-
-  // image load successful event handler
-  var onLoad = function(e){
-    increment();
-    var $div = $('<div />').append(e.target).append('<span>' + e.target.src.substr(e.target.src.lastIndexOf('/')+1) +'</span>')
-    $content.append($div);
-  };
-
-  // image load unsuccessful event handler
-  var onError = function(e){
-    increment();
-  };
- 
-  requests = [];
-
-  // XHR
-  var ajaxImage = function(i,url) {
-	requests[i] = [{ url:url, time:(new Date()).getTime() }];
-
-	var xhr = new XMLHttpRequest();
-	xhr.open("HEAD", url, true);	
-	xhr.onreadystatechange = function(){
-		var obj = {time:(new Date()).getTime(), state:xhr.readyState, status:xhr.status}
-		if (xhr.status==404) { increment(); obj.abort=true; xhr.abort();}
-		requests[i].push(obj);
-		if (xhr.status==200 && xhr.readyState==4) {
-			var $img = $('<img />').attr('src', url);
-			var $div = $('<div />').append($img).append('<span>' + url.substr(url.lastIndexOf('/')+1) +'</span>')
-		}
-		$content.append($div);
-		increment();
-	}
+		var arr = pilferEngine.detoken([pfa]);
+			if (!arr) return;
+		pilferViewer.createNavigationBar(arr);
+		pilferViewer.createProgressBar(arr.length);
+		pilferViewer.createImageTags(arr);
+	},	
 	
-	xhr.send()
-  };
-  
-  // Create Image tags
-  $.each(urls, function(i,n) { 
-	ajaxImage(i,n);  
-  });
+	// Get the PFA from the pages query string
+	// photobucket replacement curteousy of Firefusk
+	getPFAfromAddress : function() {
+			var url = window.location.href.match(/pfa=(.*)$/);
+			return (url) ? decodeURIComponent(url[1]).replace(/(\w+)\.photobucket\.com/,"photobucket.com") : null;
+	},
 
-})
+	setPageTitle : function (pfa) {
+		document.title = 'pilfer: ' + pfa;
+	},
+	
+	// Create the pages navigation bar from Pilfer Array
+	createNavigationBar : function (arr) {
+		document.getElementById('first-url').innerHTML = arr[0].link(arr[0]);
+		document.getElementById('last-url').innerHTML = arr[arr.length-1].link(arr[arr.length-1]);
+	},
+		
+	// Create the progress bar for pilferViewer
+	// <int>steps - the amount of times 'increment' should be called
+	// to reach 100%; the full range of the pilfer array
+	createProgressBar : function(steps) {
+		pilferProgressBar.initialize(steps, 50, 'progress-container');
+	},
+
+	// Create Images tags from Pilfer Array
+	createImageTags : function(arr) {   
+		for (var x=0; x<arr.length; ++x){
+			var img = new Image();
+			img.src = arr[x];
+			img.addEventListener('load', pilferViewer.onImageLoad, false);
+
+			img.addEventListener('load', function(e){pilferProgressBar.increment()}, false);
+			img.addEventListener('error',  function(e){pilferProgressBar.increment()}, false);
+		}
+	},
+	
+	// On Image Load event, append the element to the page
+	// and increment progress bar
+	onImageLoad : function(e) {		
+		var imageContentDiv = document.getElementById('image-content');
+		var div = document.createElement('div');
+
+		div.appendChild(e.target);
+		div.appendChild(document.createElement('br'));
+		div.appendChild(document.createTextNode(e.target.src.substr(e.target.src.lastIndexOf('/')+1)));
+
+		imageContentDiv.appendChild(div);
+	},
+		
+};

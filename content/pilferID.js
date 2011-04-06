@@ -42,6 +42,6 @@ pilferID = {
 	parsePref			: "extensions.pilfer.parseQuery",
 	customPref		: "extensions.pilfer.custom",
 	rangePref			: "extensions.pilfer.range",
-	custAltPref   : "extensions.pilfer.haveCustomItemsChanged",
-	rangeAltPref  : "extensions.pilfer.haveRangeItemsChanged"  
+  custAltPref   : "extensions.pilfer.haveCustomItemsChanged",
+  rangeAltPref  : "extensions.pilfer.haveRangeItemsChanged"  
 };
