@@ -9,7 +9,7 @@
 	(at your option) any later version.
 */
 
-pilferID = {
+var pilferID = {
 	ffContext			: 'contentAreaContextMenu',
 		
 	overlay				: 'pilfer-overlay-root',
