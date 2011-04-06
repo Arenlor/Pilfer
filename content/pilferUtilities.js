@@ -56,7 +56,7 @@ var pilferUtilities = {
 	promptOther : function(target, direction, leading, title, question) {
 		var range = pilferUtilities.sendPrompt(title, question, "0");
 		if (!range) return;
-		return pilferUtilities.getPiflerFormattedAddress(target, parseInt(range, 10), direction, leading);
+		return pilferUtilities.getPilferFormattedAddress(target, parseInt(range, 10), direction, leading);
 	},
 
 	getContextTarget : function(parseQueryPref) {
@@ -70,7 +70,7 @@ var pilferUtilities = {
 		return (match) ? match[1] : target;
 	},		
 		
-	getPiflerFormattedAddress : function(target, range, direction, leading) {
+	getPilferFormattedAddress : function(target, range, direction, leading) {
 		var match = target.match(/(\d+)\D*$/);
 		if (!match) return;
 		
