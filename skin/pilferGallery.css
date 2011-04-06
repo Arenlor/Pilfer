@@ -1,0 +1,39 @@
+#pilfer-gal-background{
+  background : transparent url("chrome://pilfer/skin/bg.png");
+  position : fixed;
+	top : 50px;
+	left : 0;
+  height: 100%;
+  width : 100%;
+  text-align : center;
+  display : none;
+}
+
+#pilfer-gal-frame {
+	border : 15px solid #fff;
+  border-top : 10px solid #fff;
+  border-bottom : 7px solid #fff;
+  background : #fff;
+  margin : 10px auto;
+  text-align : center;
+  -moz-border-radius :  3px;
+  -moz-box-shadow: 0 0 20px #222;
+}
+
+#pilfer-gal-imag {
+  margin : 5px 0px;
+}
+
+#pilfer-gal-clos,
+#pilfer-gal-prev,
+#pilfer-gal-next {
+  float : left;
+  height : 14px;
+  width : 20px;
+  display : block;
+  cursor : pointer;
+}
+
+#pilfer-gal-prev { background : url("chrome://pilfer/skin/prev.png"); }
+#pilfer-gal-next { background : url("chrome://pilfer/skin/next.png"); }
+#pilfer-gal-clos { background : url("chrome://pilfer/skin/close.png"); }

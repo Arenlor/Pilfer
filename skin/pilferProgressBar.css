@@ -1,0 +1,13 @@
+
+#progress-container{
+	text-align : center;
+}
+
+#pilfer-progress-bar div{
+	border : 1px solid #000;
+	background : #aaa;
+	margin-left : -1px;
+	height : 4px;
+	width : 8px;
+	display : inline-block;
+}

@@ -1,0 +1,31 @@
+#pilfer-navigation {
+	position : fixed;
+
+	top : 0;
+	width : 100%;
+	padding : 0;
+
+	background : url("navbg.png");
+
+	border : 1px solid #000;
+	border-top : none;
+}
+
+#pilfer-navigation a {
+	color : #fff;
+	font-size : 11px;
+	font-weight : 800;
+	text-decoration : none;
+}
+
+#pilfer-navigation td {
+	padding : 2px;
+}
+
+#first-url {
+	text-align : left;
+}
+
+#last-url { 
+	text-align : right;
+}
