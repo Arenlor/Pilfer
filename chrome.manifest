@@ -1,4 +1,6 @@
-content	pilfer	content/
-locale	pilfer	en-US	locale/en-US/
-skin	pilfer	classic/1.0	skin/
-overlay	chrome://browser/content/browser.xul	chrome://pilfer/content/context.xul
+content   pilfer                 chrome/content/
+skin      pilfer   classic/1.0   chrome/skin/
+locale    pilfer   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://pilfer/content/ff-overlay.xul
