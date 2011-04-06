@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://pilfer/locale/overlay.dtd">
+
+<overlay id="pilfer-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="pilfer.js"/>
+  <script src="pilferPrefs.js"/>
+  <script src="pilferElements.js"/>
+  <script src="pilferUtilities.js"/>
+  <script src="pilferDom.js"/>
+  <script src="pilferEvents.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="pilfer-strings" src="chrome://pilfer/locale/pilfer.properties"/>
+  </stringbundleset>
+
+  <popup id="contentAreaContextMenu">
+
+    <menu id="context-pilfer" 
+          label="&pilferContext.label;"
+          accesskey="&pilferContext.accesskey;"
+          insertafter="context-stop"
+          class="menuitem-iconic"
+          image="chrome://pilfer/skin/icon16.png"
+          onpopupshowing="pilfer.events.onPilferPopupShowing(event)" >
+
+          <menupopup>
+
+            <menuitem id="context-pilfer-quicknode" 
+                      label="&pilferContext.quicknode.label;" 
+                      accesskey="&pilferContext.quicknode.accesskey;" 
+                      oncommand="pilfer.events.onQuickNode(event)" />
+
+            <separator class="groove"/>
+
+            <menu label="&pilferContext.range.label;"     
+                  accesskey="&pilferContext.range.accesskey;">
+  
+              <menupopup>
+              
+                <menu label="&pilferContext.plus.label;" >
+                  <menupopup id="context-pilfer-plus"></menupopup>
+                </menu>
+
+                <menu label="&pilferContext.minus.label;" >
+                  <menupopup id="context-pilfer-minus"></menupopup>
+                </menu>
+
+                <menu label="&pilferContext.plusminus.label;" >
+                  <menupopup id="context-pilfer-plusminus"></menupopup>
+                </menu>
+
+              </menupopup>
+
+            </menu><!--context-pilfer-range-->
+
+            <menu label="&pilferContext.custom.label;"    
+                  accesskey="&pilferContext.custom.accesskey;">
+              <menupopup id="context-pilfer-custom"></menupopup>
+            </menu><!--context-pilfer-custom-->
+
+            <menuitem label="&pilferContext.directory.label;" 
+                      accesskey="&pilferContext.directory.accesskey;" 
+                      oncommand="pilfer.events.onDirectory(event)" />
+
+            <menuitem label="&pilferContext.manual.label;"    
+                      accesskey="&pilferContext.manual.accesskey;" 
+                      oncommand="pilfer.events.onManual(event)" />
+
+            <separator class="groove"/>
+
+            <menu label="&pilferContext.options.label;"
+                  accesskey="&pilferContext.options.accesskey;">
+
+                  <menupopup>
+
+                    <menuitem id="pilfer-context-leading"
+                              label="&pilferContext.leading.label;"    
+                              type="checkbox"
+                              oncommand="pilfer.events.onLeading(event)" />
+
+                    <menuitem id="context-pilfer-parsequery"
+                              label="&pilferContext.parsequery.label;"
+                              type="checkbox"
+                              oncommand="pilfer.events.onParseQuery(event)" />
+
+                  </menupopup>
+
+            </menu>
+
+          </menupopup>
+
+    </menu><!--context-pilfer-->
+
+  </popup><!--contentAreaContextMenu-->
+
+
+
+
+</overlay>
