@@ -27,7 +27,7 @@ var pilferProgressBar = {
 		var nextBlock = Math.floor((this.currentStep / this.stepCount) * this.blockCount);
 		if (nextBlock > this.currentBlock) 
 		{
-			for (var bl = (this.currentBlock < 0 ? 0 : this.currentBlock);  bl <= nextBlock; bl++ )
+			for (var bl = (this.currentBlock < 0 ? 0 : this.currentBlock);  bl < nextBlock; bl++ )
 			{
 				this.blockArray[bl].style.backgroundColor = "#ffffff";
 			}
