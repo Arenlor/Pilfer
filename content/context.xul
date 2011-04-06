@@ -11,7 +11,7 @@
 		<stringbundle id="pilfer-overlay-strings" src="chrome://pilfer/locale/pilfer.properties"/>
 	</stringbundleset>
 	
-	<popup id="contentAreaContextMenu">
+	<menupopup id="contentAreaContextMenu">
 		<menu id="pilfer-context-root" label="&pilfer.contextLabel;" accesskey="&pilfer.contextAccesskey;" insertafter="context-stop">				
 		<menupopup id="pilfer-context-root-popup">
 				<menuitem id="pilfer-context-quicknode" accesskey="&pilfer.quicknodeAccesskey;"/>		
@@ -52,6 +52,6 @@
 
 		</menupopup>
 		</menu>
-	</popup>
+	</menupopup>
 
 </overlay>
