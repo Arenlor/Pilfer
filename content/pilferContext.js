@@ -44,7 +44,7 @@ var pilferContext = {
 	},				
 		
 	onQuickNodeCommand : function() {
-		var pfa = pilferUtilities.getPiflerFormattedAddress(
+		var pfa = pilferUtilities.getPilferFormattedAddress(
 			pilferContext.target, 
 			pilferContext.quicknode, 
 			3, 
@@ -85,7 +85,7 @@ var pilferContext = {
 	},
 			
 	onRangeCommand : function(event, direction) { 
-		var pfa = pilferUtilities.getPiflerFormattedAddress(
+		var pfa = pilferUtilities.getPilferFormattedAddress(
 			pilferContext.target, 
 			event.target.label, 
 			direction, 
@@ -100,12 +100,12 @@ var pilferContext = {
 	 **********************************
 	 */
 	
-	'pref' : Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch),
-	'target' getter: ( function() { return document.getElementById(pilferID.context).getAttribute("value"); }),
-	'leading' getter: ( function() { return this.pref.getBoolPref(pilferID.leadingPref); }),
-	'parseQuery' getter: ( function() { return this.pref.getBoolPref(pilferID.parsePref); }),
-  'parentDirectory' getter: ( function() { var match = /(^.*\/)(?:.+)/.exec(this.target); return (match) ? match[1] : false; }), 
-	'quicknode' getter: ( function() { return this.pref.getIntPref(pilferID.quickPref); }),
+	'pref'            : Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch),
+	get 'target'()          { return document.getElementById(pilferID.context).getAttribute("value"); },
+	get 'leading'()         { return this.pref.getBoolPref(pilferID.leadingPref); },
+	get 'parseQuery'()      { return this.pref.getBoolPref(pilferID.parsePref); },
+	get 'parentDirectory'() { var match = /(^.*\/)(?:.+)/.exec(this.target); return (match) ? match[1] : false; },
+	get 'quicknode'()       { return this.pref.getIntPref(pilferID.quickPref); },
 	
 	/*
 	 **********************************
