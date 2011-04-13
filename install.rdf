@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
+
     <em:id>{3a7f36a0-c6ec-11dd-ad8b-0800200c9a66}</em:id>
+    <em:type>2</em:type>
+    <em:name>Pilfer</em:name>
+    <em:version>1.27</em:version>
 
-    <em:localized>
-      <Description>
-        <em:locale>en-US</em:locale>
-				<em:name>Pilfer</em:name>
-				<em:description>Pilfer is a Firefox extension for searching through sequentially named images</em:description>
-				<em:creator>Nicholas Ortenzio</em:creator>
-				<em:contributor>Jason Duncan</em:contributor>
-				<em:contributor>Cristian Haulica</em:contributor>
-				<em:homepageURL>http://pilfer.downwith.us</em:homepageURL>
-      </Description>
-    </em:localized>
+    <em:creator>Nicholas Ortenzio</em:creator>
+    <em:contributor>Jason Duncan</em:contributor>
+	<em:contributor>Cristian Haulica</em:contributor>
+	<em:contributor>Ralf Schallenberg</em:contributor>
 
-    <em:version>1.4.0.9</em:version>
-	<em:type>2</em:type>
-	<em:optionsURL>chrome://pilfer/content/options.xul</em:optionsURL>
+	<em:homepageURL>http://downwith.us</em:homepageURL>
+
+    <em:description>Create a gallery of images sequentially numbered files</em:description>
 
     <em:targetApplication>
       <Description>
-        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->
-        <em:minVersion>1.5</em:minVersion>
-        <em:maxVersion>5pre4</em:maxVersion>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>4.0</em:minVersion>
+        <em:maxVersion>4.0.*</em:maxVersion>
       </Description>
     </em:targetApplication>
 
