@@ -85,7 +85,7 @@ var pilferOptions = {
 	},
 	
 	setPrefArray : function(arr, pref) {
-		this.prefService.setCharPref(pref, arr.toSource());
+		this.prefService.setCharPref(pref, JSON.stringify(arr));
 	},
     
 	setCustAltPref : function() {
