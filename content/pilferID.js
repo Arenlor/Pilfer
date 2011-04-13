@@ -16,32 +16,32 @@ var pilferID = {
 	strings				: 'pilfer-overlay-strings',
 	
 	context 			: 'pilfer-context-root',
-	quicknode 		: 'pilfer-context-quicknode',
+	quicknode 			: 'pilfer-context-quicknode',
 	
-	plusminus 		: 'pilfer-context-plusminus',
-	plus 					: 'pilfer-context-plus',
+	plusminus 			: 'pilfer-context-plusminus',
+	plus 				: 'pilfer-context-plus',
 	minus 				: 'pilfer-context-minus',
 
-	bothPop 	: 'pilfer-context-plusminus-pop',
+	bothPop 			: 'pilfer-context-plusminus-pop',
 	plusPop 			: 'pilfer-context-plus-pop',
 	minusPop 			: 'pilfer-context-minus-pop',
 	
 	bothOther 			: 'pilfer-context-plusminus-other',
 	plusOther			: 'pilfer-context-plus-other',
-	minusOther		: 'pilfer-context-minus-other',
+	minusOther			: 'pilfer-context-minus-other',
 	
 	manual 				: 'pilfer-context-manual',
 	custom 				: 'pilfer-context-custom', 
 	customPop			: 'pilfer-context-custom-pop',
 	directory			: 'pilfer-context-directory',
 	leading				: 'pilfer-context-leading',
-	parseQuery		: 'pilfer-context-parse',
+	parseQuery			: 'pilfer-context-parse',
 
-	quickPref 		: "extensions.pilfer.quicknode",
-	leadingPref 	: "extensions.pilfer.leading",
+	quickPref 			: "extensions.pilfer.quicknode",
+	leadingPref 		: "extensions.pilfer.leading",
 	parsePref			: "extensions.pilfer.parseQuery",
-	customPref		: "extensions.pilfer.custom",
-	rangePref			: "extensions.pilfer.range",
-  custAltPref   : "extensions.pilfer.haveCustomItemsChanged",
-  rangeAltPref  : "extensions.pilfer.haveRangeItemsChanged"  
+	customPref			: "extensions.pilfer.customJSON",
+	rangePref			: "extensions.pilfer.rangeJSON",
+	custAltPref   		: "extensions.pilfer.haveCustomItemsChanged",
+	rangeAltPref  		: "extensions.pilfer.haveRangeItemsChanged"  
 };

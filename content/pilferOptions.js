@@ -29,8 +29,8 @@ var pilferOptions = {
 		formatValue 		: "formatValue",
 		modelValue 			: "modelValue",
 		
-		customPref			: "extensions.pilfer.custom",
-		rangePref			: "extensions.pilfer.range",
+		customPref			: "extensions.pilfer.customJSON",
+		rangePref			: "extensions.pilfer.rangeJSON",
 		custAltPref     	: "extensions.pilfer.haveCustomItemsChanged",
 		rangeAltPref    	: "extensions.pilfer.haveRangeItemsChanged"
 	}, 
