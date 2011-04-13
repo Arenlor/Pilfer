@@ -24,15 +24,15 @@ var pilferOptions = {
 		rangeListbox 		: "rangeListbox",
 		customListbox		:	"customListbox",
 		
-		quicknodeValue 	: "quicknodeValue",
+		quicknodeValue 		: "quicknodeValue",
 		rangeValue 			: "rangeValue",
 		formatValue 		: "formatValue",
 		modelValue 			: "modelValue",
 		
 		customPref			: "extensions.pilfer.custom",
-		rangePref				: "extensions.pilfer.range",
-    custAltPref     : "extensions.pilfer.haveCustomItemsChanged",
-    rangeAltPref    : "extensions.pilfer.haveRangeItemsChanged",
+		rangePref			: "extensions.pilfer.range",
+		custAltPref     	: "extensions.pilfer.haveCustomItemsChanged",
+		rangeAltPref    	: "extensions.pilfer.haveRangeItemsChanged"
 	}, 
 
 	prefService : Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch),
@@ -70,7 +70,7 @@ var pilferOptions = {
 		pilferOptions.sortCustomListboxItemsByModel();
 	},
 
-  onCustomSortFormat : function(event) {
+	onCustomSortFormat : function(event) {
 		pilferOptions.sortCustomListboxItemsByFormat();
 	},
     
@@ -81,20 +81,20 @@ var pilferOptions = {
 	 */
 	
 	getPrefArray : function(pref) {
-		return eval(this.prefService.getCharPref(pref));
+		return JSON.parse(this.prefService.getCharPref(pref));
 	},
 	
 	setPrefArray : function(arr, pref) {
 		this.prefService.setCharPref(pref, arr.toSource());
 	},
     
-  setCustAltPref : function() {
-    this.prefService.setBoolPref(this.id.custAltPref, true);
-  },
+	setCustAltPref : function() {
+		this.prefService.setBoolPref(this.id.custAltPref, true);
+	},
 	
-  setRangeAltPref : function() {
-    this.prefService.setBoolPref(this.id.rangeAltPref, true);
-  },
+	setRangeAltPref : function() {
+		this.prefService.setBoolPref(this.id.rangeAltPref, true);
+	},
     
 	/*
 	 **********************************
@@ -125,7 +125,7 @@ var pilferOptions = {
 			pilferOptions.populateRangeListbox();
 		}
     
-    pilferOptions.setRangeAltPref();
+		pilferOptions.setRangeAltPref();
 	},
 	
 	removeRangeListboxItem : function() {
@@ -136,7 +136,7 @@ var pilferOptions = {
 		pilferOptions.setPrefArray(arr, this.id.rangePref);
 		listbox.removeItemAt(index);
     
-    pilferOptions.setRangeAltPref();
+		pilferOptions.setRangeAltPref();
 	},
 
 	/*
@@ -180,7 +180,7 @@ var pilferOptions = {
 			item.appendChild(labl);
 			listbox.appendChild(item);
       
-    pilferOptions.setCustAltPref();
+		pilferOptions.setCustAltPref();
 	},
 	
 	removeCustomListboxItem : function() {
@@ -191,7 +191,7 @@ var pilferOptions = {
 		pilferOptions.setPrefArray(arr, this.id.customPref);
 		listbox.removeItemAt(index);	
     
-    pilferOptions.setCustAltPref();
+		pilferOptions.setCustAltPref();
 	},
 
 	clearListbox : function(){
@@ -209,17 +209,17 @@ var pilferOptions = {
 		pilferOptions.setPrefArray(arr.sort(), this.id.customPref);
 
 		pilferOptions.populateCustomListbox();
-    pilferOptions.setCustAltPref();
+		pilferOptions.setCustAltPref();
 	},
 		
-  sortCustomListboxItemsByFormat : function() {
+	sortCustomListboxItemsByFormat : function() {
 		pilferOptions.clearListbox();
 		
 		var arr = pilferOptions.getPrefArray(this.id.customPref);
 		pilferOptions.setPrefArray(arr.sort(function(a,b){return (a[1]<b[1]) ? -1 : ((a[1]>b[1]) ?  1 : 0)}), this.id.customPref);
 
 		pilferOptions.populateCustomListbox();
-    pilferOptions.setCustAltPref();
+		pilferOptions.setCustAltPref();
 	},  
      
 };

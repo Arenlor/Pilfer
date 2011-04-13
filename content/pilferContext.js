@@ -118,7 +118,7 @@ var pilferContext = {
 	},
 	
 	getPrefArray : function(p) {
-		return eval(this.pref.getCharPref(p));
+		return JSON.parse(this.pref.getCharPref(p));
 	},
 					
 	setQuickNodeAttributes : function(target) { 
